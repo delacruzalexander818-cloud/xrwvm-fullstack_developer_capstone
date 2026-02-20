@@ -1,0 +1,107 @@
+<html>
+<head>
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+
+  <style>
+    .contact-container {
+      width: 80%;
+      margin: auto;
+      margin-top: 5%;
+      padding: 3%;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .contact-title {
+      text-align: center;
+      margin-bottom: 3%;
+    }
+
+    .contact-info {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .form-control {
+      margin-bottom: 15px;
+    }
+
+    .btn-custom {
+      background-color: darkturquoise;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-custom:hover {
+      background-color: teal;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTACT CONTENT -->
+  <div class="contact-container">
+
+    <div class="contact-title">
+      <h1>Contact Us</h1>
+      <p>We would love to hear from you. Get in touch with our team for any inquiries or assistance.</p>
+    </div>
+
+    <div class="row">
+      
+      <!-- Contact Information -->
+      <div class="col-md-6">
+        <h4>Our Office</h4>
+        <p class="contact-info"><strong>Address:</strong> 1234 Auto Drive, Houston, TX 77001</p>
+        <p class="contact-info"><strong>Phone:</strong> +1 (555) 234-5678</p>
+        <p class="contact-info"><strong>Email:</strong> contact@bestcars.com</p>
+        <p class="contact-info"><strong>Business Hours:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: 10:00 AM - 4:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <h4>Send Us a Message</h4>
+        <form>
+          <input type="text" class="form-control" placeholder="Full Name" required>
+          <input type="email" class="form-control" placeholder="Email Address" required>
+          <input type="text" class="form-control" placeholder="Subject">
+          <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn btn-custom">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
