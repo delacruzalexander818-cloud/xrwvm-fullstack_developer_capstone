@@ -37,12 +37,9 @@ class CarModel(models.Model):
     # Many-to-One relationship (una marca → muchos modelos)
     car_make = models.ForeignKey(
         CarMake,
-        on_delete=models.CASCADE,
-        related_name="models"
+        on_delete=models.CASCADE
     )
 
-    # Dealer ID (viene de Cloudant)
-    dealer_id = models.IntegerField()
 
     # Nombre del modelo
     name = models.CharField(max_length=100)
