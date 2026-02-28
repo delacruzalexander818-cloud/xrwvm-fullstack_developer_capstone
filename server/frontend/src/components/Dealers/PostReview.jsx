@@ -12,6 +12,7 @@ const PostReview = () => {
   const [year, setYear] = useState("");
   const [date, setDate] = useState("");
   const [carmodels, setCarmodels] = useState([]);
+  
 
   let curr_url = window.location.href;
   let root_url = curr_url.substring(0,curr_url.indexOf("postreview"));
@@ -38,7 +39,7 @@ const PostReview = () => {
 
     let jsoninput = JSON.stringify({
       "name": name,
-      "dealership": id,
+      "dealership": parseInt(id),
       "review": review,
       "purchase": true,
       "purchase_date": date,
@@ -57,8 +58,8 @@ const PostReview = () => {
   });
 
   const json = await res.json();
-  if (json.status === 200) {
-      window.location.href = window.location.origin+"/dealer/"+id;
+  if (res.ok) {
+    window.location.replace("/dealer/" + id);
   }
 
   }
@@ -69,9 +70,7 @@ const PostReview = () => {
     const retobj = await res.json();
     
     if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
-      if(dealerobjs.length > 0)
-        setDealer(dealerobjs[0])
+        setDealer(retobj.dealer);
     }
   }
 
@@ -94,7 +93,7 @@ const PostReview = () => {
     <div>
       <Header/>
       <div  style={{margin:"5%"}}>
-      <h1 style={{color:"darkblue"}}>{dealer.full_name}</h1>
+      <h1 style={{color:"darkblue"}}>{dealer?.full_name}</h1>
       <textarea id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
       <div className='input_field'>
       Purchase Date <input type="date" onChange={(e) => setDate(e.target.value)}/>
