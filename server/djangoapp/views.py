@@ -17,6 +17,7 @@ from .populate import initiate
 from .models import CarMake, CarModel
 from .restapis import get_request
 from .restapis import analyze_review_sentiments
+from .restapis import post_review
 
 
 # Get an instance of a logger
